@@ -701,34 +701,34 @@
 
             // Load images
             crayonImage.onload = resourceLoaded;
-            crayonImage.src = "images/crayon-outline.png";
+            crayonImage.src = "~/Content/Images/crayon-outline.png";
 
             markerImage.onload = resourceLoaded;
-            markerImage.src = "images/marker-outline.png";
+            markerImage.src = "~/Content/Images/marker-outline.png";
 
             eraserImage.onload = resourceLoaded;
-            eraserImage.src = "images/eraser-outline.png";
+            eraserImage.src = "~/Content/Images/eraser-outline.png";
 
             crayonBackgroundImage.onload = resourceLoaded;
-            crayonBackgroundImage.src = "images/crayon-background.png";
+            crayonBackgroundImage.src = "~/Content/Images/crayon-background.png";
 
             markerBackgroundImage.onload = resourceLoaded;
-            markerBackgroundImage.src = "images/marker-background.png";
+            markerBackgroundImage.src = "~/Content/Images/marker-background.png";
 
             eraserBackgroundImage.onload = resourceLoaded;
-            eraserBackgroundImage.src = "images/eraser-background.png";
+            eraserBackgroundImage.src = "~/Images/eraser-background.png";
 
             bucketBackgroundImage.onload = resourceLoaded;
-            bucketBackgroundImage.src = "images/bucket-background.png";
-
+            bucketBackgroundImage.src = "~/Content/Images/bucket-background.png";
+            Console.log("Went through here");
             crayonTextureImage.onload = function () {
                 contexts.texture.drawImage(crayonTextureImage, 0, 0, drawingAreaWidth, drawingAreaHeight);
                 resourceLoaded();
             };
-            crayonTextureImage.src = "images/crayon-texture.png";
+            crayonTextureImage.src = "~/Content/Images/crayon-texture.png";
 
             swatchImage.onload = resourceLoaded;
-            swatchImage.src = "images/paint-outline.png";
+            swatchImage.src = "~/Content/Images/paint-outline.png";
 
             outlineImage.onload = function () {
 
@@ -744,10 +744,11 @@
 
                 resourceLoaded();
             };
-            outlineImage.src = "images/watermelon-duck-outline.png";
+            outlineImage.src = "~/Content/Images/watermelon-duck-outline.png";
         };
 
     return {
         init: init
     };
-}());
+});
+$(document).ready(drawingApp.init(400,400));
