@@ -27,8 +27,8 @@ namespace Telestrations
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/style.css"));
-            bundles.Add(new ScriptBundle("~/bundles/customBundle").Include(
-                "~/Content/Scripts/Play.js"));
+            bundles.Add(new StyleBundle("~/bundles/Play").Include(
+                "~/Content/scripts/Play.js"));
         }
     }
 }
