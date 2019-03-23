@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C8EC4136-CEFA-4BE8-B9EA-FE789F40849F}</ProjectGuid>
+    <ProjectGuid>{3580C98A-871D-4698-B333-10497EB72B86}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Telestrations</RootNamespace>
-    <AssemblyName>Telestrations</AssemblyName>
+    <RootNamespace>Project2</RootNamespace>
+    <AssemblyName>Project2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -112,18 +112,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -206,12 +194,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\GameSetupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
+    <Compile Include="Controllers\SetupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,26 +213,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\Play\blank.png" />
-    <Content Include="Content\Images\Play\bucket-background.png" />
-    <Content Include="Content\Images\Play\color-swatch-brown.png" />
-    <Content Include="Content\Images\Play\color-swatch-green.png" />
-    <Content Include="Content\Images\Play\color-swatch-purple.png" />
-    <Content Include="Content\Images\Play\color-swatch-yellow.png" />
-    <Content Include="Content\Images\Play\crayon-background.png" />
-    <Content Include="Content\Images\Play\crayon-outline.png" />
-    <Content Include="Content\Images\Play\crayon-texture.png" />
-    <Content Include="Content\Images\Play\eraser-background.png" />
-    <Content Include="Content\Images\Play\eraser-outline.png" />
-    <Content Include="Content\Images\Play\marker-background.png" />
-    <Content Include="Content\Images\Play\marker-outline.png" />
-    <Content Include="Content\Images\Play\paint-outline.png" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\scripts\Play.js" />
-    <Content Include="Content\style.css" />
+    <Content Include="Content\scripts\Setup.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -297,12 +271,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Setup.cshtml" />
-    <Content Include="Views\Shared\_Home.cshtml" />
     <Content Include="Views\Shared\_Play.cshtml" />
+    <Content Include="Views\Setup\About.cshtml" />
+    <Content Include="Views\Setup\Create.cshtml" />
+    <Content Include="Views\Setup\Preview.cshtml" />
     <Content Include="Views\Play\Play.cshtml" />
     <Content Include="Views\Play\Results.cshtml" />
-    <Content Include="Views\GameSetup\Create.cshtml" />
-    <Content Include="Views\GameSetup\Preview.cshtml" />
+    <Content Include="Views\Play\Players.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -336,9 +311,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56333</DevelopmentServerPort>
+          <DevelopmentServerPort>65306</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56333/</IISUrl>
+          <IISUrl>http://localhost:65306/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

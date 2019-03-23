@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Telestrations";
+}
+<div class="jumbotron text-center">
+    <h1>Telestrations</h1>
+    <p class="lead">
+        Telestration is a fun game to play with family and friends!<br />
+        You better have your art skills ready!
+    </p>
+    <div class="form-group game-number">
+        <input type="text" class="form-control" placeholder="Enter Game Number">
+    </div>
+    <p><button class="btn btn-success btn-lg">Join a Game &raquo;</button></p>
+</div>
+
+<div class="row text-center">
+
+    @if (Request.IsAuthenticated)
+    {
+        <div class="col-md-12">
+            <div class="btn btn-warning btn-lg">@Html.ActionLink("Create a New Game!", "Create", "Setup")</div>
+        </div>
+    }
+    else
+    {
+
+        <div class="col-md-6">
+            <h2>Log In!</h2>
+            <p>
+                Log in to create and start a new game!
+            </p>
+            <div class="btn btn-default">@Html.ActionLink("Log in ", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })&raquo;</div>
+        </div>
+        <div class="col-md-6">
+            <h2>Sign Up</h2>
+            <p>Create an account!</p>
+            <div class="btn btn-default">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })&raquo;</div>
+        </div>
+    }
+</div>
