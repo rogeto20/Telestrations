@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿
+using System.Web;
 using System.Web.Optimization;
 
 namespace Project2
@@ -29,7 +30,7 @@ namespace Project2
             bundles.Add(new StyleBundle("~/scripts/custom").Include(
                 "~/Content/scripts/Play.js",
                 "~/Content/scripts/Setup.js",
-                "~/Content/scripts/Home.js")); 
+                "~/Content/scripts/Home.js"));
         }
     }
 }

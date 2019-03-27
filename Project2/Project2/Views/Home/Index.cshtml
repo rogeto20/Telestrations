@@ -7,17 +7,17 @@
         Telestration is a fun game to play with family and friends!<br />
         You better have your art skills ready!
     </p>
-    <div class="row" >
+    <div class="row">
         <div class="input-group text-center" style="margin:auto;">
             <input id="game-number" class="form-control form-control-lg text-center" type="number" placeholder="Enter Game Number">
             <br /><br />
             <p><button id="join-game" class="btn btn-success btn-lg">Join a Game &raquo;</button></p>
-            <br/>
+            <br />
             <text id="test"></text>
         </div>
     </div>
-    
-    
+
+
 </div>
 
 <div class="row text-center">
@@ -25,10 +25,10 @@
     @if (Request.IsAuthenticated)
     {
         <div class="col-md-12">
-           
-                <button class="btn btn-warning btn-lg" onclick="location.href = '../Setup/Create';">
-                    Create a New Game!
-                </button>
+
+            <button class="btn btn-warning btn-lg" onclick="location.href = '../Setup/Create';">
+                Create a New Game!
+            </button>
         </div>
     }
     else
@@ -42,7 +42,7 @@
             <button id="loginLink" class="btn btn-primary btn-lg" onclick="location.href = '../Account/Login';">
                 Log In &raquo;
             </button>
-            
+
         </div>
         <div class="col-md-6">
             <h2>Sign Up</h2>
@@ -53,3 +53,5 @@
         </div>
     }
 </div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/scripts/custom")
