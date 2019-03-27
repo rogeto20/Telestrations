@@ -28,7 +28,8 @@ namespace Project2
 
             bundles.Add(new StyleBundle("~/scripts/custom").Include(
                 "~/Content/scripts/Play.js",
-                "~/Content/scripts/Setup.js")); 
+                "~/Content/scripts/Setup.js",
+                "~/Content/scripts/Home.js")); 
         }
     }
 }
