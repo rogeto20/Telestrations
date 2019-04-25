@@ -28,6 +28,7 @@ namespace Project2
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/scripts/custom").Include(
+                "~/Content/scripts/drawing-app-with-bucket.js",
                 "~/Content/scripts/Play.js",
                 "~/Content/scripts/Setup.js",
                 "~/Content/scripts/Home.js"));

@@ -218,7 +218,22 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\bucket-background.png" />
+    <Content Include="Content\Images\color-swatch-brown.png" />
+    <Content Include="Content\Images\color-swatch-green.png" />
+    <Content Include="Content\Images\color-swatch-purple.png" />
+    <Content Include="Content\Images\color-swatch-yellow.png" />
+    <Content Include="Content\Images\crayon-background.png" />
+    <Content Include="Content\Images\crayon-outline.png" />
+    <Content Include="Content\Images\crayon-texture.png" />
+    <Content Include="Content\Images\eraser-background.png" />
+    <Content Include="Content\Images\eraser-outline.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\marker-background.png" />
+    <Content Include="Content\Images\marker-outline.png" />
+    <Content Include="Content\Images\paint-outline.png" />
+    <Content Include="Content\Images\watermelon-duck-outline.png" />
+    <Content Include="Content\scripts\drawing-app-with-bucket.js" />
     <Content Include="Content\scripts\Home.js" />
     <Content Include="Content\scripts\Play.js" />
     <Content Include="Content\scripts\Setup.js" />
@@ -289,6 +304,7 @@
     <Content Include="Views\Setup\Details.cshtml" />
     <Content Include="Views\Setup\Edit.cshtml" />
     <Content Include="Views\Setup\Index.cshtml" />
+    <Content Include="Views\Setup\Test.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
