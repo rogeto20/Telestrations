@@ -26,8 +26,17 @@ namespace Project2.Controllers
         public ActionResult Players(string id)
         {
             var gameId = int.Parse(id);
-            var model = db.Games.Where( u => u.GameID == gameId).ToList();
-            return View(model);
+             var result = db.Games.Find(gameId);
+
+                    var model = new GameViewModel
+                    {
+                        GameID = gameId
+                    };
+
+
+                    return View(model);
+
+           
         }
     }
 }
