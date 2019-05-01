@@ -9,10 +9,10 @@ namespace Project2.Controllers
 {
     public class PlayController : Controller
     {
-
+        private Project db;
         public PlayController()
         {
-
+            db = new Project();
         }
         // GET: Play
         public ActionResult Play()
@@ -25,8 +25,8 @@ namespace Project2.Controllers
         }
         public ActionResult Players(string id)
         {
-            GameViewModel model = new GameViewModel();
-            model.GameID = int.Parse(id);
+            var gameId = int.Parse(id);
+            var model = db.Games.Where( u => u.GameID == gameId);
             return View(model);
         }
     }
