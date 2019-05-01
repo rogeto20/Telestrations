@@ -1,4 +1,4 @@
-﻿
+﻿@Model Project2.Models.GameViewModel
 @{
     ViewBag.Title = "Preview";
     Layout = "~/Views/Shared/_Setup.cshtml";
@@ -6,3 +6,19 @@
 
 <h2>Preview</h2>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">@Model</th>
+            <th scope="col">#</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Name of Game</th>
+            <th scope="col">Category</th>
+            <th scope="col">Number of Players</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/scripts/setup")

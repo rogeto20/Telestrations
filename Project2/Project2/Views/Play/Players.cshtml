@@ -1,8 +1,22 @@
 ﻿
 @{
     ViewBag.Title = "Players";
-    Layout = "~/Views/Shared/_Play.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Players</h2>
+<h2 id="game-id" data-value-id="@ViewBag.GameId">Players</h2>
 
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/scripts/play")

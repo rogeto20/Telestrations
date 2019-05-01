@@ -14,6 +14,12 @@ namespace Project2
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Players",
+                url: "Play/Players/{id}",
+                defaults: new { controller = "Play", action = "Players"}
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

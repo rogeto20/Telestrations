@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,11 @@ namespace Project2.Controllers
 {
     public class PlayController : Controller
     {
+
+        public PlayController()
+        {
+
+        }
         // GET: Play
         public ActionResult Play()
         {
@@ -17,9 +23,11 @@ namespace Project2.Controllers
         {
             return View();
         }
-        public ActionResult Players()
+        public ActionResult Players(string id)
         {
-            return View();
+            GameViewModel model = new GameViewModel();
+            model.GameID = int.Parse(id);
+            return View(model);
         }
     }
 }

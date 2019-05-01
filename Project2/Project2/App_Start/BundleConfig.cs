@@ -27,10 +27,16 @@ namespace Project2
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/scripts/custom").Include(
-                "~/Content/scripts/Play.js",
-                "~/Content/scripts/Setup.js",
+            bundles.Add(new StyleBundle("~/scripts/home").Include(
                 "~/Content/scripts/Home.js"));
+
+            bundles.Add(new StyleBundle("~/scripts/play").Include(
+                "~/Content/scripts/API/PlayAPI.js",
+                "~/Content/scripts/Play.js"));
+
+            bundles.Add(new StyleBundle("~/scripts/setup").Include(
+                "~/Content/scripts/API/SetupAPI.js",
+                "~/Content/scripts/Setup.js"));
         }
     }
 }

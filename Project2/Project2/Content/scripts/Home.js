@@ -14,6 +14,7 @@
 
     },
     checkGame: function (text) {
+        window.location.href = '../play/players/'+text;
         $("#test").text(text);
     }
 }

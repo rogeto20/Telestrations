@@ -9,10 +9,6 @@ namespace Project2.Controllers
     public class SetupController : Controller
     {
         // GET: Setup
-        public ActionResult About()
-        {
-            return View();
-        }
         public ActionResult Create()
         {
             return View();
