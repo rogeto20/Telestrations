@@ -5,9 +5,24 @@
 }
 
 <h2>Play</h2>
-<div class="row center-block">
-    <div id="canvasDiv"></div>
+<div class="row">
+   
+        <div class="col-md-4 pull-left">
+
+        </div>
+        <div>
+            <div id="canvasDiv"></div>
+            <div class="input-group text-center" style="margin:auto;">
+                <input id="guess" class="form-control form-control-lg text-center" type="number" placeholder="Enter A Guess">
+                <br /><br />
+                <p><button id="send-guess" class="btn btn-success btn-lg">Guess</button></p>
+                <br />
+                <text id="test"></text>
+            </div>
+        </div>
+        
 </div>
+
 
 
 @Scripts.Render("~/bundles/jquery")

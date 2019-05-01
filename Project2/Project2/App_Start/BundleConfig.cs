@@ -37,6 +37,7 @@ namespace Project2
 
             bundles.Add(new StyleBundle("~/scripts/setup").Include(
                 "~/Content/scripts/API/SetupAPI.js",
+                "~/Content/scripts/Preview.js",
                 "~/Content/scripts/Setup.js"));
         }
     }
