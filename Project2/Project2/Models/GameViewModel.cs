@@ -1,11 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
 namespace Project2.Models
 {
+    public class Project : DbContext
+    {
+        public DbSet<GameViewModel> Games { get; set; }
+    }
+
     public class GameViewModel
     {
         [Display(Name = "Game Id")]
