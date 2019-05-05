@@ -15,9 +15,10 @@
                 data: JSON.stringify({
                     Owner: owner
                 }),
+                dataSrc: ''
 
             },
-            rowId: "GameId",
+            rowId: "ID",
             serverSide: true,
             searching: false,
             pageLength: 10,
@@ -27,10 +28,10 @@
 
             columns: [
                 { data: "ID", sortable: true, searchable: false, name: "ID" },
-                { data: "Owner", sortable: true, searchable: false, name: "Owner" },
-                { data: "GameName", sortable: true, searchable: false, name: "GameName" },
-                { data: "Category", sortable: true, searchable: false, name: "Category" },
-                { data: "NumPlayers", sortable: true, searchable: false, name: "NumPlayers" }
+                { data: "owner", sortable: true, searchable: false, name: "owner" , visible: false},
+                { data: "name", sortable: true, searchable: false, name: "name" },
+                { data: "category", sortable: true, searchable: false, name: "category" },
+                { data: "numPlayers", sortable: true, searchable: false, name: "numPlayers" }
             ]
         });
     }

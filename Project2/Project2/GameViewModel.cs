@@ -20,9 +20,6 @@ namespace Project2
         public int numPlayers { get; set; }
         public string name { get; set; }
 
-        public static implicit operator GameViewModel(Game v)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
