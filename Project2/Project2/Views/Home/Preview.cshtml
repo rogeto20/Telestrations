@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNet.Identity
+@model Project2.Models.GameViewModel
+@{
+    ViewBag.Title = "Preview";
+    Layout = "~/Views/Shared/_Setup.cshtml";
+}
+
+<h2 id="games" data-user="@Html.Name(User.Identity.GetUserName())">Preview</h2>
+
+<table id="table-games" class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">GameId</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Name of Game</th>
+            <th scope="col">Category</th>
+            <th scope="col">Number of Players</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+@Scripts.Render("~/bundles/jquery")
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.6/r-2.2.2/datatables.min.css" />
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.6/r-2.2.2/datatables.min.js"></script>
+@Scripts.Render("~/scripts/setup")

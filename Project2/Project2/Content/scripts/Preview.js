@@ -1,14 +1,21 @@
 ﻿var Preview = {
     Initialize: function () {
         Preview.InitializeGameDataTable();
+        
     },
 
     InitializeGameDataTable: function () {
-        
+        var owner = $("#games").attr('data-user');
+        console.log(owner);
         var table = $("#table-games").DataTable({
             ajax: {
-                url: "../Setup/GetGames",
-                type: "POST"
+                url: "../Home/GetGames",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify({
+                    Owner: owner
+                }),
+
             },
             rowId: "GameId",
             serverSide: true,
@@ -19,11 +26,11 @@
             processing: true,
 
             columns: [
-                { data: "GameId", sortable: true, searchable: false, name: "GameId" },
+                { data: "ID", sortable: true, searchable: false, name: "ID" },
                 { data: "Owner", sortable: true, searchable: false, name: "Owner" },
-                { data: "Name", sortable: true, searchable: false, name: "Name" },
+                { data: "GameName", sortable: true, searchable: false, name: "GameName" },
                 { data: "Category", sortable: true, searchable: false, name: "Category" },
-                { data: "NumOfPlayers", sortable: true, searchable: false, name: "NumOfPlayers" },
+                { data: "NumPlayers", sortable: true, searchable: false, name: "NumPlayers" }
             ]
         });
     }

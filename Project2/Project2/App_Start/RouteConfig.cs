@@ -15,8 +15,8 @@ namespace Project2
 
             routes.MapRoute(
                 name: "Players",
-                url: "Play/Players/{id}",
-                defaults: new { controller = "Play", action = "Players"}
+                url: "Home/Players/{id}",
+                defaults: new { controller = "Home", action = "Players"}
             );
 
             routes.MapRoute(

@@ -7,22 +7,18 @@ using System.Web;
 
 namespace Project2.Models
 {
-    public class Project : DbContext
-    {
-        public DbSet<GameViewModel> Games { get; set; }
-    }
-
+   
     public class GameViewModel
     {
+
         [Display(Name = "Game Id")]
-        [Required]
-        public int GameID { get; set; }
+        public int ID { get; set; }
 
         [Display(Name = "Owner")]
         public string Owner { get; set; }
 
         [Display(Name = "Game Name")]
-        public string Name { get; set; }
+        public string GameName { get; set; }
 
         [Display(Name = "Category")]
         public string Category { get; set; }

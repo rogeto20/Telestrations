@@ -28,6 +28,7 @@ namespace Project2
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/scripts/home").Include(
+                 "~/Content/scripts/API/PlayAPI.js",
                 "~/Content/scripts/Home.js"));
 
             bundles.Add(new StyleBundle("~/scripts/play").Include(
@@ -36,7 +37,7 @@ namespace Project2
                 "~/Content/scripts/Play.js"));
 
             bundles.Add(new StyleBundle("~/scripts/setup").Include(
-                "~/Content/scripts/API/SetupAPI.js",
+                 "~/Content/scripts/API/PlayAPI.js",
                 "~/Content/scripts/Preview.js",
                 "~/Content/scripts/Setup.js"));
         }
