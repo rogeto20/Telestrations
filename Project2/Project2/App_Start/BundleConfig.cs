@@ -34,7 +34,11 @@ namespace Project2
             bundles.Add(new StyleBundle("~/scripts/play").Include(
                 "~/Content/scripts/API/PlayAPI.js",
                 "~/Content/scripts/drawing-app.js",
+                "~/Content/scripts/Players.js",
                 "~/Content/scripts/Play.js"));
+
+            bundles.Add(new StyleBundle("~/scripts/players").Include(
+                "~/Content/scripts/Players.js"));
 
             bundles.Add(new StyleBundle("~/scripts/setup").Include(
                  "~/Content/scripts/API/PlayAPI.js",

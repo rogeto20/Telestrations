@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Project2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Project2.Controllers
         [HttpPost]
         public JsonResult GetGames(string Owner)
         {
-            Owner = "romeogeto@gmail.com";
+          
             var config = new MapperConfiguration(cfg => {
                 cfg.CreateMap<Game, GameViewModel>();
             });
@@ -34,6 +35,33 @@ namespace Project2.Controllers
                 {
                     var result = db.Games.Where(u => u.owner == Owner).AsQueryable().ToList();
                     var model = mapper.Map<List<Game>, List<GameViewModel>>(result);
+                    return Json(model);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult GetPlayers(int GameId)
+        {
+            
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Player, PlayerViewModel>();
+            });
+
+            IMapper mapper = config.CreateMapper();
+
+            try
+            {
+                using (var db = new ProjectEntities())
+                {
+                    var result = db.Players.Where(u => u.gameId == GameId).AsQueryable().ToList();
+                    var model = mapper.Map<List<Player>, List<PlayerViewModel>>(result);
                     return Json(model);
                 }
 
@@ -91,7 +119,7 @@ namespace Project2.Controllers
                     
                     Player players = new Player
                     {
-                        name = model.name,
+                        name = model.owner,
                         position = db.Players.Count(u=> u.gameId == model.ID),
                         gameId = model.ID
                     };

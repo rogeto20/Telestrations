@@ -1,21 +1,39 @@
-﻿var Home = {
+﻿var Players = {
     Initialize: function () {
-        $(document).on("click", "#join-game", function () {
-            
-            
-            var text = $("#game-number").val();
-           
-            if (text == "") {
-                console.log("Text box is empty");
-            } else {
-                Home.checkGame(text);
-            }
-        });
+
+        console.log("Got here");
+        Players.InitializePlayersDataTable();
 
     },
-    checkGame: function (text) {
-        window.location.href = '../Home/players/'+text;
-        $("#test").text(text);
+
+    InitializePlayersDataTable: function () {
+        var gameId = $("#game-id").attr('data-id');
+        console.log(gameId);
+        var table = $("#players").DataTable({
+            ajax: {
+                url: "../../Home/GetPlayers",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    GameId: gameId
+                },
+                dataSrc: ''
+
+            },
+            rowId: "gameId",
+            serverSide: true,
+            searching: false,
+            pageLength: 10,
+            lengthChange: false,
+            order: [1, "asc"],
+            processing: true,
+
+            columns: [
+                { data: "position", sortable: true, searchable: false, name: "position" },
+                { data: "name", sortable: true, searchable: false, name: "name" },
+                { data: "gameId", sortable: true, searchable: false, name: "gameId" }
+            ]
+        });
     }
 }
-$(document).ready(Home.Initialize());
+$(document).ready(Players.Initialize());

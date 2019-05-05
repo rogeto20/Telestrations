@@ -12,9 +12,9 @@
                 url: "../Home/GetGames",
                 type: "POST",
                 dataType: "json",
-                data: JSON.stringify({
+                data: {
                     Owner: owner
-                }),
+                },
                 dataSrc: ''
 
             },
