@@ -73,7 +73,35 @@ namespace Project2.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveNewGame(GameViewModel model)
+        public JsonResult RegisterPlayer(String NickName, int GameId)
+        {
+            try
+            {
+                using (var db = new ProjectEntities())
+                {
+                   
+                    Player players = new Player
+                    {
+                        name = NickName,
+                        position = db.Players.Count(u => u.gameId == GameId),
+                        gameId = GameId
+                    };
+
+                    db.Players.Add(players);
+                    db.SaveChanges();
+                    return Json(true);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                return Json(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult SaveNewGame(GameViewModel model, String NickName)
         {
             try
             {
@@ -119,7 +147,7 @@ namespace Project2.Controllers
                     
                     Player players = new Player
                     {
-                        name = model.owner,
+                        name = NickName,
                         position = db.Players.Count(u=> u.gameId == model.ID),
                         gameId = model.ID
                     };
@@ -162,9 +190,23 @@ namespace Project2.Controllers
             return View();
         }
 
-        public ActionResult Play()
+        public ActionResult Play(int gameId)
         {
-            return View();
+            using (var db = new ProjectEntities())
+            {
+                var result = db.Games.Find(gameId);
+
+                var model = new GameViewModel
+                {
+                    ID = result.Id,
+                    category = result.category,
+                    name = result.name,
+                    numPlayers = result.numPlayers,
+                    owner = result.owner
+                };
+
+                return View(model);
+            }
         }
         public ActionResult Results()
         {
@@ -173,20 +215,22 @@ namespace Project2.Controllers
         public ActionResult Players(int gameId)
         {
 
+           
             using (var db = new ProjectEntities())
             {
                 var result = db.Games.Find(gameId);
 
                 var model = new GameViewModel
                 {
-                    ID = gameId
+                    ID = result.Id,
+                    category= result.category,
+                    name = result.name,
+                    numPlayers = result.numPlayers,
+                    owner = result.owner
                 };
 
                 return View(model);
             }
-
-
-
         }
     }
 }

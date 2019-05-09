@@ -6,7 +6,6 @@
 
     InitializeGameDataTable: function () {
         var owner = $("#games").attr('data-user');
-        console.log(owner);
         var table = $("#table-games").DataTable({
             ajax: {
                 url: "../Home/GetGames",

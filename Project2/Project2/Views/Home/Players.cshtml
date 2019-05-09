@@ -5,18 +5,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 id="game-id" data-id="@Model.ID">@Model.name</h2>
+<h2 id="game-id" data-id="@Model.ID" data-val="@Model.name">@Model.name</h2>
 
-<table id="players" class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Game Id</th>
-        </tr>
-    </thead>
-    <tbody></tbody>
-</table>
+<div class="row">
+    <table id="players" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Game Id</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div id="form"class="row">
+    <div class="input-group text-center" style="margin:auto;">
+        <br /><br />
+        <input id="nick-name" class="form-control form-control-lg text-center" type="text" required placeholder="Nick Name">
+        <br /><br />
+        <p><button id="register" class="btn btn-warning btn-lg">Register &raquo;</button></p>
+        <br />
+        <text id="test"></text>
+    </div>
+</div>
+<div id="start" class="row hidden">
+    <div class="input-group text-center" style="margin:auto;">
+        <br /><br />
+        <p><button id="draw" class="btn btn-success btn-lg" onclick="location.href = '../../Home/Play/' + @Model.ID;">Start Game!</button></p>
+        <br />
+    </div>
+</div>
+
+
 @Scripts.Render("~/bundles/jquery")
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.css" />
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>

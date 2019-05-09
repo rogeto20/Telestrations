@@ -7,7 +7,7 @@
     },
 
     SaveNewGame: function () {
-        var nickName = $("#owner-name").val();
+        var nickName = $("#nick-name").val();
         var name = $("#game-name").val();
         var category = $("#category").val();
         var numPlayers = $("#players").val();
@@ -16,6 +16,6 @@
         PlayAPI.SaveNewGame(nickName, name, category, numPlayers, owner);
        // console.log(name + category + numPlayers + owner);
 
-    },
+    }
 }
 $(document).ready(Setup.Initialize());

@@ -66,8 +66,8 @@ var drawingApp = {
 
     Initialize: function () {
 
-
         drawingApp.prepareCanvas();
+        
     },
     /**
     * Calls the redraw function after all neccessary resources are loaded.
@@ -101,43 +101,43 @@ var drawingApp = {
         crayonImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        crayonImage.src = "../Content/Images/crayon-outline.png";
+        crayonImage.src = "../../Content/Images/crayon-outline.png";
         //context.drawImage(crayonImage, 0, 0, 100, 100);
 
         markerImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        markerImage.src = "../Content/Images/marker-outline.png";
+        markerImage.src = "../../Content/Images/marker-outline.png";
 
         eraserImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        eraserImage.src = "../Content/Images/eraser-outline.png";
+        eraserImage.src = "../../Content/Images/eraser-outline.png";
 
         crayonBackgroundImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        crayonBackgroundImage.src = "../Content/Images/crayon-background.png";
+        crayonBackgroundImage.src = "../../Content/Images/crayon-background.png";
 
         markerBackgroundImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        markerBackgroundImage.src = "../Content/Images/marker-background.png";
+        markerBackgroundImage.src = "../../Content/Images/marker-background.png";
 
         eraserBackgroundImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        eraserBackgroundImage.src = "../Content/Images/eraser-background.png";
+        eraserBackgroundImage.src = "../../Content/Images/eraser-background.png";
 
         crayonTextureImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        crayonTextureImage.src = "../Content/Images/crayon-texture.png";
+        crayonTextureImage.src = "../../Content/Images/crayon-texture.png";
 
         outlineImage.onload = function () {
             drawingApp.resourceLoaded();
         };
-        outlineImage.src = "../Content/Images/watermelon-duck-outline.png";
+        outlineImage.src = "../../Content/Images/watermelon-duck-outline.png";
 
         // Add mouse events
         // ----------------
