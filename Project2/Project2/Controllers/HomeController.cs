@@ -10,15 +10,6 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
-
-         //using (var db = new RPT_SyngoWorkflowEntities())
-         //       {
-         //           var result = db.ResearchProjects.Find(projectID);
-         //           var model = Mapper.Map<ResearchProjectViewModel>(result);
-         //           return Json(new AjaxResponse(model, true));
-         //       }
-
-
         [HttpPost]
         public JsonResult GetGames(string Owner)
         {

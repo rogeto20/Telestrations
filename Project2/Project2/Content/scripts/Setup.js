@@ -14,7 +14,6 @@
         var owner = $("#game-name").attr('data-name');
 
         PlayAPI.SaveNewGame(nickName, name, category, numPlayers, owner);
-       // console.log(name + category + numPlayers + owner);
 
     }
 }

@@ -1,5 +1,7 @@
 ﻿// Copyright 2012 William Malone (www.williammalone.com)
 //
+//http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
@@ -15,6 +17,14 @@
 /*jslint browser: true */
 /*global G_vmlCanvasManager */
 
+
+
+/**********************************************/
+/*
+ * I editted the code I got from William Malone's tutorial to work with my website
+ * and the MVC model
+ * 
+/**********************************************/
 var canvas;
 var context;
 var canvasWidth = 490;
